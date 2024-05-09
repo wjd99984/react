@@ -3,32 +3,38 @@ import React from "react";
 
 // eslint-disable-next-line no-unused-vars
 function App(props) {
-  const a = [];
+  const a = ["흥민", "강인", "희찬"];
+  const b = a.map(function (item) {
+    return item + "선수";
+  });
 
-  //push : 새 값을 배열 맨뒤에 추가
-  a.push("흥민");
-  a.push("강인");
-  a.push("3.14");
+  const c = a.map(function (item) {
+    // eslint-disable-next-line react/jsx-key
+    return <li>{item}</li>;
+  });
 
-  //pop : 맨 뒤의 값을 제거후 리턴
-
-  let val1 = a.pop();
-  console.log(val1);
-  let val2 = a.pop();
-  console.log(val2);
-
-  //map : 각 원소를 다른값으로 매핑후 새배열 리턴
-  const b = [5, 4, 3, 2, 1];
-  console.log(b);
-
-  function action(param) {
-    return param * 2;
-  }
-  const c = b.map(action);
-  console.log(b);
-  console.log(c);
-
-  return <div></div>;
+  return (
+    <div>
+      <div>{a}</div>
+      <div>
+        {a[0]}
+        {a[1]}
+        {a[2]}
+      </div>
+      <div>{b}</div>
+      <div>{c}</div>
+      <div>
+        {a.map(function (item) {
+          return <li>{item} 선수</li>;
+        })}
+      </div>
+      <div>
+        {a.map((item) => (
+          <li> {item} 선수</li>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default App;
