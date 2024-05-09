@@ -1,10 +1,14 @@
 function App() {
+  const name = "강인";
+  const position = "미드필더";
+  const salary = 30;
+
   return (
-    <>
-      <div>
-        <h1>hello react</h1>
-      </div>
-    </>
+    <div>
+      <p>
+        {position} {name}의 연봉은 {salary}억 입니다
+      </p>
+    </div>
   );
 }
 
