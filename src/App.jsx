@@ -22,7 +22,7 @@ function App() {
   console.log("h", h);
 
   // || (or  ..아니면) : 왼쪽항이 false면 오른쪽 값
-  const i = a < 10 || "greeting"; // true
+  const i = a < 5 || "greeting"; // true
   const j = a < 5 || "안녕"; // 안녕
   console.log("i", i);
   console.log("j", j);
