@@ -1,22 +1,31 @@
 import React from "react";
 
-function MyComp(props) {
-  console.log(props);
+function MyElem(props) {
+  console.log(props); // {name: "son", age: 33}
+
+  const { name, age } = props;
+  console.log("name", name); // son
+  console.log("age", age); // 33
+
+  return <div></div>;
+}
+
+function MyComp({ city, country, price }) {
+  // props : {city: "seoul", country:"korea", price: 500}
+  console.log("city", city);
+  console.log("country", country);
+  console.log("price", price);
+
+  return <div></div>;
+}
+
+function App(props) {
   return (
     <div>
-      <p>name : {props.name}</p>
-      <p>age : {props.age}</p>
-      <p>address : {props.address}</p>
-      <p>city : {props.city}</p>
-      <p>country : {props.country}</p>
+      <MyElem name="son" age={33} />
+      <MyComp city="seoul" country="korea" price={500} />
     </div>
   );
 }
-function App(props) {
-  return <div></div>;
-  return (
-    <div>
-      <MyComp name="son" age={33} address="seoul" />
-      <MyComp city="busan" country="USA" />
-    </div>
-  );
+
+export default App;
