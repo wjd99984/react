@@ -1,17 +1,17 @@
 import React from "react";
 
-function MyComp({ name, age, someProp, otherProp }) {
-  console.log("name", name);
-  console.log("age", age);
-  console.log("someProp", someProp); // true :값없이 작성되면 true
-  console.log("otherProp", otherProp); // true
-  return <div></div>;
-}
-
 function App(props) {
+  return <div></div>;
   return (
     <div>
-      <MyComp name="son" age={30} someProp otherProp={true} />
+      <button
+        onClick={() => console.log("clicked")}
+        onMouseEnter={() => console.log("mouse entered")}
+        onMouseLeave={() => console.log("mouse leaved")}
+      >
+        클릭1
+      </button>
+      <input type="text" onChange={() => console.log("changed")} />
     </div>
   );
 }
