@@ -30,6 +30,25 @@ function App(props) {
   console.log("name", name);
   console.log("age", age);
 
+  const car = {
+    model: "genesis",
+    company: "hyundai",
+    price: 500,
+  };
+  const { model, company, price } = car;
+  console.log("model", model);
+  console.log("company", company);
+  console.log("price", price);
+
+  const house = {
+    city: "seoul",
+    country: "us",
+  };
+  const { city, country, area = 987 } = house;
+  console.log("city", city);
+  console.log("country", country);
+  console.log("area", area);
+
   return <div></div>;
 }
 
