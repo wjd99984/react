@@ -1,16 +1,16 @@
 import React from "react";
-import { Badge, Button, ChakraProvider } from "@chakra-ui/react";
+
+// default export는 아무 이름으로 import할 수 있음, 중괄호 없이
+import val, { v1 } from "./MyValues.jsx";
+import someVal from "./MyComps.jsx";
 
 function App(props) {
   return (
-    <ChakraProvider>
-      <div>
-        <Button colorScheme={"blue"}>클릭</Button>
-        <Button colorScheme={"green"}>
-          알림 <Badge>new</Badge>
-        </Button>
-      </div>
-    </ChakraProvider>
+    <div>
+      <div>{v1}</div>
+      <div>{val}</div>
+      <div>{someVal}</div>
+    </div>
   );
 }
 
