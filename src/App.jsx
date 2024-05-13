@@ -1,10 +1,14 @@
 import React from "react";
 
-function MyComp({ headStyle, bodyStyle }) {
+function MyComp({ name, age, children }) {
+  console.log("name", name);
+  console.log("age", age);
+  console.log("children", children);
   return (
     <div>
-      <h1 style={headStyle}>Lorem.</h1>
-      <p style={bodyStyle}>Lorem ipsum dolor.</p>
+      <div>name : {name}</div>
+      <div>age : {age}</div>
+      <div>childrend : {children}</div>
     </div>
   );
 }
@@ -12,19 +16,16 @@ function MyComp({ headStyle, bodyStyle }) {
 function App(props) {
   return (
     <div>
-      <MyComp
-        headStyle={{
-          padding: "5px",
-          border: "1px solid lightgray",
-          color: "blue",
-        }}
-        bodyStyle={{
-          margin: "5px",
-          border: "1px dotted skyblue",
-          color: "red",
-          textAlign: "center",
-        }}
-      />
+      <MyComp name={"son"} age={33}>
+        {/* content는 children prop */}
+        <p>Lorem ipsum dolor.</p>
+      </MyComp>
+      <MyComp name={"lee"} age={22}>
+        <ul>
+          <li>Lorem.</li>
+          <li>Recusandae.</li>
+        </ul>
+      </MyComp>
     </div>
   );
 }
