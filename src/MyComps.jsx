@@ -1,11 +1,6 @@
-// react component 들
+const v1 = "korea";
+const v2 = 44;
+export const v3 = "seoul";
 
-export function MyComp() {
-  return <div>mycomp</div>;
-}
-
-export const YourComp = function () {
-  return <div>yourcomp</div>;
-};
-
-export const ArrowComp = () => <div>arrow function component</div>;
+// 한 번에 export
+export { v1, v2 };
