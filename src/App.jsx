@@ -1,26 +1,37 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-function MyButton({ onClick }) {
-  return <button onClick={onClick}>클릭</button>;
+// step1 : create the context
+const MessageContext = createContext("");
+
+function MyBox() {
+  // step2 : use the context
+  const message = useContext(MessageContext);
+
+  return <div>{message}</div>;
 }
 
-function MyNumber({ number }) {
-  return <div>number : {number}</div>;
+function MySection() {
+  return <MyBox />;
 }
 
+function MyContainer() {
+  return <MySection />;
+}
+
+// context
+// https://react.dev/learn/passing-data-deeply-with-context
 function App(props) {
-  const [number, setNumber] = useState(0);
+  const [message, setMessage] = useState("");
 
-  function handleNumberChange() {
-    setNumber(number + 1);
-  }
-
-  // 하위컴포넌트의 상태와 이벤트를 상위컴포넌트에서 관리할 수 있다.
-  // 이 때 props 사용해서 이벤트핸들러메소드와 상태를 전달해 줌.
   return (
     <div>
-      <MyButton onClick={handleNumberChange} />
-      <MyNumber number={number} />
+      <input type="text" onChange={(e) => setMessage(e.target.value)} />
+      <p>{message}</p>
+      <hr />
+      {/* step3 : provide the context */}
+      <MessageContext.Provider value={message}>
+        <MyContainer />
+      </MessageContext.Provider>
     </div>
   );
 }
