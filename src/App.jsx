@@ -23,6 +23,28 @@ function App(props) {
     // axios.get("/api/someurl3?" + params);
     axios.get(`/api/someurl3?${params}`);
   }
+  function handleClickButton6() {
+    const params = new URLSearchParams();
+    params.append("id", 5);
+    params.append("city", "서울");
+    params.append("country", "한국");
+    axios.post(`/api/someurl3?${params}`);
+  }
+
+  function handleClickButton7() {
+    const params = new URLSearchParams();
+    params.append("id", 19);
+    params.append("name", "고양이");
+    params.append("age", 3);
+    axios.get(`/api/someurl4?${params}`);
+  }
+  function handleClickButton8() {
+    const params = new URLSearchParams();
+    params.append("id", 9984);
+    params.append("name", "강아지");
+    params.append("age", 4);
+    axios.post(`/api/someurl4?${params}`);
+  }
 
   return (
     <div>
@@ -31,6 +53,9 @@ function App(props) {
       <button onClick={handleClickButton3}>method3 요청</button>
       <button onClick={handleClickButton4}>method4 요청</button>
       <button onClick={handleClickButton5}>get 요청 with query string</button>
+      <button onClick={handleClickButton6}>post 요청 with data</button>
+      <button onClick={handleClickButton7}>get 요청 with query string</button>
+      <button onClick={handleClickButton8}>post 요청 with query string</button>
     </div>
   );
 }
