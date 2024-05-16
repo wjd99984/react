@@ -2,46 +2,20 @@ import React from "react";
 import axios from "axios";
 
 function App(props) {
-  // json 데이터 타입
-  // 문자열, 수, 불리언, 객체, 배열, null
-
   function handleClick1() {
-    const data = {
-      name: "son",
-      age: 33,
-      married: false,
-      team: {
-        location: "london",
-        name: "토트넘",
-      },
-      item: ["phone", "shoes", "shirts"],
-      address: null,
-    };
-    axios.post("/api/main41/sub5", data);
+    axios.get("/api/main42/sub1").then((param) => console.log(param.data));
   }
-
   function handleClick2() {
-    axios.post("/api/main41/sub6", {
-      name: "son",
-      age: 33,
-    });
-  }
-  function handleClick3() {
-    axios.post("/api/main41/sub7", {
-      name: "고양이",
-      age: 4,
-      address: "서울",
-    });
+    axios.get("/api/main42/sub2").then((param) => console.log(param.data));
   }
 
   return (
     <div>
-      <button onClick={handleClick1}>json 데이터와 요청</button>
+      <button onClick={handleClick1}>응답 받기</button>
       <br />
-      <button onClick={handleClick2}>json 데이터와 요청</button>
-      <br />
-      <button onClick={handleClick3}>json 데이터와 요청</button>
-      <br />
+      {/* 버튼이 클릭되면 /api/main42/sub2 get 요청 후
+      응답본문을 콘솔에 출력 */}
+      <button onClick={handleClick2}>응답 받기</button>
     </div>
   );
 }
