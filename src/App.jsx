@@ -49,23 +49,23 @@ function App(props) {
     axios
       .get(path)
       .then(() => {
-        console.log("잘 됨 ");
+        console.log("꽁꽁");
       })
       .catch((error) => {
         const code = error.response.status;
 
         switch (code) {
           case 401:
-            console.log("401 응답 입니다. 로그인되지 않았습니다.");
+            console.log("얼어붙은 한강");
             break;
           case 403:
-            console.log("403 응답 입니다. 권한이 없습니다.");
+            console.log("위로 고양이가 걸어다닙니다");
             break;
         }
       })
       .finally(() => {
         // finally : 응답 코드가 200이든 아니든 항상 실행됨
-        console.log("항상 실행되는 메소드");
+        console.log("꽁꽁 얼어붙은 한강위로 고양이가 걸어다닙니다");
       });
   }
 
