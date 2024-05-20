@@ -1,40 +1,40 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { BoardAdd } from "./BoardAdd.jsx";
-import { BoardEdit } from "./BoardEdit.jsx";
-import { BoardList } from "./BoardList.jsx";
-
-// router 객체
-const router = createBrowserRouter([
-  {
-    path: "/add",
-    element: <BoardAdd />,
-  },
-  {
-    path: "/edit",
-    element: <BoardEdit />,
-  },
-  {
-    path: "/list",
-    element: <BoardList />,
-  },
-  {
-    path: "/board",
-    children: [
-      {
-        path: "write",
-        element: <div>게시물 작성하기!!</div>,
-      },
-      {
-        path: "edit",
-        element: <div>게시물 수정하기@@</div>,
-      },
-    ],
-  },
-]);
+import { Button, ChakraProvider } from "@chakra-ui/react";
 
 function App(props) {
-  return <RouterProvider router={router} />;
+  return (
+    <ChakraProvider>
+      <div>
+        <Button colorScheme={"gray"}>Gray </Button>
+        <Button colorScheme={"red"}>Lorem.</Button>
+        <Button colorScheme={"orange"}>Dolores?</Button>
+        <Button colorScheme={"yellow"}>Doloribus!</Button>
+        <Button colorScheme={"green"}>Rerum.</Button>
+        <Button colorScheme={"teal"}>Tempore.</Button>
+        <Button colorScheme={"blue"}>Sequi.</Button>
+        <Button colorScheme={"cyan"}>Sint.</Button>
+        <Button colorScheme={"purple"}>Cupiditate?</Button>
+        <Button colorScheme={"pink"}>Nemo!</Button>
+        <hr />
+        <Button colorScheme={"blue"} isLoading={true}>
+          Lorem.
+        </Button>
+        <hr />
+        <Button colorScheme={"blue"} variant={"solid"}>
+          Lorem.
+        </Button>
+        <Button colorScheme={"blue"} variant={"outline"}>
+          Natus.
+        </Button>
+        <Button colorScheme={"blue"} variant={"ghost"}>
+          Voluptatem?
+        </Button>
+        <Button colorScheme={"blue"} variant={"link"}>
+          Accusantium!
+        </Button>
+      </div>
+    </ChakraProvider>
+  );
 }
 
 export default App;
